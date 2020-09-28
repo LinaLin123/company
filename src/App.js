@@ -4,10 +4,8 @@ import RegisterPage from "./Pages/RegisterPage"
 import ActivateAccountPage from "./Pages/ActivateAccountPage"
 import CustomerPage from "./Pages/CustomerPage"
 import CustomerDetailPage from "./Pages/CustomerDetailPage"
-import UpdateCustomer from "./components/UpdateCustomer"
 import { CustomerListContext } from "./contexts/CustomerListContext"
 import { UserContext } from "./contexts/UserContext"
-import ClientPage from "./Pages/ClientPage"
 import CheckYourEmail from "./Pages/CheckYourEmail"
 import './App.css';
 
@@ -26,12 +24,6 @@ function App() {
           </Route>
 
           <Route path="/customer/:id" component={CustomerDetailPage} />
-
-          <Route path="/update/" component={UpdateCustomer} />
-
-          <Route path="/ClientPage">
-          <ClientPage />
-          </Route>
 
           <Route path="/check">
           <CheckYourEmail />

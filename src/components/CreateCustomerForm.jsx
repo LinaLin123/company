@@ -74,7 +74,7 @@ export default function CreateCustomerForm() {
         />
         <label>VAT number</label>
         <Input value={vatNr} name="vatNr" type="text" onChange={handleChange} />
-        {error}
+        <Paragraf>{error}</Paragraf>
 
         <label>Reference</label>
         <Input
@@ -130,7 +130,6 @@ const FormWrapper = styled.form`
 `;
 const Input = styled.input`
   padding: 0.5em;
-  margin: 0.5em;
   background: papayawhip;
   border: none;
   border-radius: 3px;
@@ -151,3 +150,8 @@ const Button = styled.button`
     color: white;
   }
 `;
+
+const Paragraf = styled.p`
+color: red;
+font-size: 10px;
+`

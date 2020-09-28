@@ -15,15 +15,14 @@ export default function CustomerDetails({
 
   return (
     <div>
-      <h5>{name}</h5>
-      <p>{organisationNr}</p>
-      <p>{vatNr}</p>
-      <p>{reference}</p>
-      <p>{paymentTerm}</p>
-      <p>{website}</p>
-      <p>{email}</p>
-      <p>{phoneNumber}</p>
-      <h1>Hej2</h1>
+      <p>Name: {name}</p>
+      <p>OrganisationsNr: {organisationNr}</p>
+      <p>VatNr: {vatNr}</p>
+      <p>Reference: {reference}</p>
+      <p>Payment Term: {paymentTerm}</p>
+      <p>Website: {website}</p>
+      <p>Email: {email}</p>
+      <p>Phone number: {phoneNumber}</p>
     </div>
   );
 }

@@ -29,8 +29,9 @@ export default function RegisterForm() {
 
   return (
     <Wrapper>
-      <h1>Register</h1>
-      <p>Enter details to register</p>
+      <h2>Register</h2>
+      <Paragraf>Enter details to register</Paragraf>
+
       <FormWrapper>
         <label>First Name</label>
         <Input
@@ -74,6 +75,8 @@ flex-direction: column;
 background-color:white;
 padding:1em 2em 1em 2em;
 border-radius: 20px;
+box-shadow: 11px 10px 20px -2px rgba(133,131,133,0.46);
+
 `
 const Input = styled.input`
   padding: 0.5em;
@@ -99,3 +102,6 @@ const Button = styled.button`
   }
 `;
 
+const Paragraf = styled.p`
+font-weight: bold;
+`;

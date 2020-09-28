@@ -16,6 +16,7 @@ export default function CustomersPage() {
       <UserWrapper>
         <User />
       </UserWrapper>
+      
       </UserContainer>
 
 

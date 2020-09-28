@@ -54,22 +54,21 @@ export default function CustomerList() {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-items: center;
-  align-items: center;
+  // justify-items: center;
+  // align-items: center;
 `;
 const ContainerWrapper = styled(Wrapper)`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  padding-right: 10em;
   padding-top: 2em;
   padding-bottom: 3em;
 `;
 
 const CustomerWrapper = styled(Wrapper)`
   background-color: white;
-  padding: 0 1em 0 1em;
+  padding: 1em 3em 1em 3em;
   border-radius: 50px 0 50px 0;
 `;
 
