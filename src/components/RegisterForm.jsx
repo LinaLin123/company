@@ -84,7 +84,7 @@ const Input = styled.input`
   background: papayawhip;
   border: none;
   border-radius: 3px;
-  font-size:12pt;
+  font-size:10pt;
 `;
 
 const Button = styled.button`
@@ -97,8 +97,7 @@ const Button = styled.button`
   cursor: pointer;
   
   :hover {
-    background-color: grey;
-    color: white;
+    background-color: #e3e3e3;
   }
 `;
 

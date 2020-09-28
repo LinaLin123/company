@@ -5,7 +5,7 @@ export default function CheckYourEmail() {
     
     return (
         <Wrapper>
-            <p> Check your email for activate your account!</p>
+            <Paragraf> Check your email for activate your account!</Paragraf>
         </Wrapper>
     )
 }
@@ -15,4 +15,8 @@ display: flex;
 flex-direction: column;
 justify-items: center;
 align-items: center;
+`
+
+const Paragraf = styled.div`
+margin-top:16em;
 `

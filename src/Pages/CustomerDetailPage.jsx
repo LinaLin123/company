@@ -8,7 +8,6 @@ export default function CustomerDetailPage(props) {
   const userKit = new UserKit();
   const [customerData, setCustomerData] = useState({});
 
-  // console.log(props.match.params.id);
   const history = useHistory();
   const customerId = props.match.params.id;
 
@@ -19,7 +18,6 @@ export default function CustomerDetailPage(props) {
       .then((res) => res.json())
       .then((data) => {
         setCustomerData(data);
-        console.log(data);
       });
   }
 
@@ -74,7 +72,7 @@ export default function CustomerDetailPage(props) {
     <Wrapper>
       <ButtonWrapper>
       <ButtonDelete onClick={handleDeleteCustomer}>Delete</ButtonDelete>
-      <Button onClick={handleOnClick}>Back</Button>
+      <ButtonBack onClick={handleOnClick}>Back</ButtonBack>
       </ButtonWrapper>
 
       <ContainerWrapper>
@@ -163,16 +161,16 @@ export default function CustomerDetailPage(props) {
   );
 }
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-`;
 
 const ContainerWrapper = styled.div`
   display: flex;
   flex-direction: row-reverse;
+`;
+
+const Wrapper = styled(ContainerWrapper)`
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 `;
 
 const FormWrapper = styled.form`
@@ -184,11 +182,10 @@ const FormWrapper = styled.form`
   border-radius: 0 50px 0 50px;
 `;
 
-const CustomerDetailsWrapper = styled.div`
-  display: flex;
+const CustomerDetailsWrapper = styled(ContainerWrapper)`
   flex-direction: column;
   background-color: white;
-  padding: 0 1em 0 1em;
+  padding: 3em 1em 0 1em;
   margin: 1em;
   border-radius: 50px 0 50px 0;
 `;
@@ -209,14 +206,13 @@ const Button = styled.button`
   background-color: orange;
   font-size: 1em;
   margin: 1em;
-  padding: 0.25em 1em;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  padding:0.5em 2em 0.5em 2em;
 
   :hover {
-    background-color: grey;
-    color: white;
+    background-color: #e3e3e3;
   }
 `;
 
@@ -230,3 +226,12 @@ color: white;
 }
 `;
 
+const ButtonBack = styled(Button)`
+background-color:#22EBB2;
+color: white; 
+
+:hover {
+  background-color: white;
+  color: #22EBB2;
+}
+`;

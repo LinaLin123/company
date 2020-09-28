@@ -13,7 +13,6 @@ export default function User() {
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
-        console.log(data);
       });
   }
 
@@ -21,9 +20,6 @@ export default function User() {
     getLoginUser();
     //eslint-disable-next-line
   }, []);
-
-  console.log(user);
-  console.log(setUser);
 
   return (
     <div>

@@ -12,7 +12,6 @@ export default function ActivateAccount() {
   const [token, setToken] = useState(urlParameters.get("token"));
 
   const userKit = new UserKit();
-  console.log(uid, token);
 
   function handleActivateUser() {
     userKit.activateUser(uid, token).then(() => {

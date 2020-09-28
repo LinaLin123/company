@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function CustomerList() {
-  // const [customerList, setCustomerList] = useState ([])
   const userKit = new UserKit();
   const { customerList1, setCustomerList } = useContext(CustomerListContext);
 
@@ -15,7 +14,6 @@ export default function CustomerList() {
       .getCustomerList()
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCustomerList(data.results);
       });
   }
@@ -25,7 +23,6 @@ export default function CustomerList() {
     //eslint-disable-next-line
   }, []);
 
-  console.log(customerList1);
   return (
     <Wrapper>
       <ContainerWrapper>
@@ -74,8 +71,8 @@ const CustomerWrapper = styled(Wrapper)`
 
 const CustomerFormWrapper = styled(CustomerWrapper)`
   margin-left: 2em;
-  border-radius: 20px;
-`;
+  border-radius: 0 50px 0 50px;
+  `;
 
 const Heading = styled.h2`
   margin: 0.5em 0 0.5em 0;

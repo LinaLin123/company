@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 
 export default function Login() {
-  const [email, setEmail] = useState("jlina.lin+test+1@gmail.com");
-  const [password, setPassword] = useState("kompis123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const userKit = new UserKit();
   const history = useHistory();
 

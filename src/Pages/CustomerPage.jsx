@@ -6,7 +6,6 @@ import styled from 'styled-components'
 
 export default function CustomersPage() {
   const { user } = useContext(UserContext);
-  console.log(user);
 
   return (
     <Wrapper>
@@ -19,7 +18,6 @@ export default function CustomersPage() {
       
       </UserContainer>
 
-
       <CustomerList />
     </Wrapper>
   );
@@ -30,19 +28,19 @@ display: flex;
 flex-direction: column;
 `
 const Heading = styled.h2 `
-margin:0.5em 0 0.5em 0;
-font-size:30px;
-padding-right:1em;
+margin: 0.5em 0 0.5em 0;
+font-size: 15px;
+padding-right: 1em;
 `
 const UserContainer = styled.div`
-display:flex;
+display: flex;
 flex-direction: column;
 align-items: flex-end;
 `
 
 const UserWrapper = styled(Wrapper) `
-background-color:white;
+background-color: white;
 border-radius: 20px 0 0 20px;
-padding-left:2em;
-padding-right:1em;
+padding-left: 2em;
+padding-right: 1em;
 `
