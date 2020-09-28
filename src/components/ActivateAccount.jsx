@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import UserKit from "../data/UserKit";
 import Login from "../components/Login";
+import styled from 'styled-components'
 
 export default function ActivateAccount() {
   const history = useHistory();
@@ -22,17 +23,43 @@ export default function ActivateAccount() {
   }
 
   return (
-    <div>
+    <Wrapper>
       {uid && token ? (
         <div>
           <h1>Activate Account</h1>
-          <button onClick={handleActivateUser}>Activate User</button>
+          <ButtonWrapper><Button onClick={handleActivateUser}>Activate User</Button></ButtonWrapper>
         </div>
       ) : (
         <div>
           <Login />
         </div>
       )}
-    </div>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div `
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+
+const ButtonWrapper = styled(Wrapper)`
+align-items:center;
+`
+
+const Button = styled.button`
+  background-color:orange;
+  font-size: 1em;
+  padding: 0.25em 1em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color:white;
+  
+  :hover {
+    background-color: grey;
+    color: white;
+  }
+`;

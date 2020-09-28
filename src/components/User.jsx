@@ -1,21 +1,21 @@
-import React, { useContext, useEffect } from 'react'
-import UserKit from '../data/UserKit'
-import { UserContext } from '../contexts/UserContext'
-import Test from '../components/Test'
+import React, { useContext, useEffect } from "react";
+import UserKit from "../data/UserKit";
+import { UserContext } from "../contexts/UserContext";
+import styled from 'styled-components'
 
 export default function User() {
-const userKit = new UserKit()
-let {user,setUser} = useContext(UserContext)
+  const userKit = new UserKit();
+  let { user, setUser } = useContext(UserContext);
 
-function getLoginUser() {
+  function getLoginUser() {
     userKit
       .getUser()
       .then((res) => res.json())
-      .then((data) => 
-        {setUser(data)
-         console.log(data)});
+      .then((data) => {
+        setUser(data);
+        console.log(data);
+      });
   }
-
 
   useEffect(() => {
     getLoginUser();
@@ -24,12 +24,18 @@ function getLoginUser() {
 
   console.log(user);
   console.log(setUser);
-  
-    return (
-        <div>
-    <h2>Välkommen {user && user.firstName} {user && user.lastName}</h2>
-    <h2>Email:{user && user.email}</h2>
-<Test />
-        </div>
-    )
+
+  return (
+    <div>
+      <Paragraf>
+        Login as {user && user.firstName} {user && user.lastName}
+      </Paragraf>
+      <Paragraf>Email:{user && user.email}</Paragraf>
+    </div>
+  );
 }
+
+const Paragraf = styled.p `
+margin:0.5em 0 0.5em 0;
+font-size:15px;
+`

@@ -8,6 +8,8 @@ import UpdateCustomer from "./components/UpdateCustomer"
 import { CustomerListContext } from "./contexts/CustomerListContext"
 import { UserContext } from "./contexts/UserContext"
 import ClientPage from "./Pages/ClientPage"
+import CheckYourEmail from "./Pages/CheckYourEmail"
+
 import './App.css';
 
 
@@ -30,6 +32,10 @@ function App() {
 
           <Route path="/ClientPage">
           <ClientPage />
+          </Route>
+
+          <Route path="/check">
+          <CheckYourEmail />
           </Route>
 
           <Route path="/login">

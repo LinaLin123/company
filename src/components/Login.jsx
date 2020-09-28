@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import UserKit from "../data/UserKit";
 import { useHistory } from 'react-router-dom'
+import styled from 'styled-components'
 
 export default function Login() {
   const [email, setEmail] = useState("jlina.lin+test+1@gmail.com");
@@ -19,13 +20,52 @@ export default function Login() {
   }
 
   return (
-    <div>
+    <Wrapper>
       <h2>Login</h2>
+      <LoginWrapper>
       <label>Email</label>
-      <input value={email} type="email" onChange={(e) => setEmail(e.target.value)} />
+      <Input value={email} type="email" onChange={(e) => setEmail(e.target.value)} />
       <label>Password</label>
-      <input value={password} type="password" onChange={(e) => setPassword(e.target.value)} />
-      <button onClick={handleLogin}>Login</button>
-    </div>
+      <Input value={password} type="password" onChange={(e) => setPassword(e.target.value)} />
+      <Button onClick={handleLogin}>Login</Button>
+      </LoginWrapper>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div `
+display: flex;
+flex-direction: column;
+justify-items: center;
+align-items: center;
+`
+const LoginWrapper = styled(Wrapper) `
+background-color:white;
+padding:1em 2em 1em 2em;
+border-radius: 20px;
+`
+const Input = styled.input`
+  padding: 0.5em;
+  margin: 0.5em;
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+  font-size:12pt;
+`;
+
+
+const Button = styled.button`
+  background-color:orange;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  
+  :hover {
+    background-color: grey;
+    color: white;
+  }
+`;
+

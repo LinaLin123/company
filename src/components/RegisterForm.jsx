@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import UserKit from "../data/UserKit";
-import styled from "styled-components";
+import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
 
 export default function RegisterForm() {
   const [firstName, setFirstName] = useState("");
@@ -10,6 +11,7 @@ export default function RegisterForm() {
   const [organisationName, setOrganisationName] = useState("");
   const [organisationKind, setorganisationKind] = useState("0");
   const userKit = new UserKit();
+  const history = useHistory()
 
   function handleRegister() {
     userKit.register(
@@ -19,33 +21,39 @@ export default function RegisterForm() {
       password,
       organisationName,
       organisationKind
-    );
+    )
+    .then(
+      history.push('/check')
+    )
   }
 
   return (
     <Wrapper>
-      <Heading>Register</Heading>
+      <h1>Register</h1>
       <p>Enter details to register</p>
       <FormWrapper>
         <label>First Name</label>
         <Input
           value={firstName}
+          type="text"
           onChange={(e) => setFirstName(e.target.value)}
         />
         <label>Last Name</label>
-        <Input value={lastName} onChange={(e) => setLastName(e.target.value)} />
+        <Input value={lastName} type="text" onChange={(e) => setLastName(e.target.value)} />
         <label>Email</label>
-        <Input value={email} onChange={(e) => setEmail(e.target.value)} />
+        <Input value={email} type="email" onChange={(e) => setEmail(e.target.value)} />
         <label>Password</label>
-        <Input value={password} onChange={(e) => setPassword(e.target.value)} />
+        <Input value={password} type="password" onChange={(e) => setPassword(e.target.value)} />
         <label>Company</label>
         <Input
           value={organisationName}
+          type="text"
           onChange={(e) => setOrganisationName(e.target.value)}
         />
         <label>Company kind</label>
         <Input
           value={organisationKind}
+          disabled
           onChange={(e) => setorganisationKind(e.target.value)}
         />
         <Button onClick={handleRegister}>Register</Button>
@@ -54,23 +62,26 @@ export default function RegisterForm() {
   );
 }
 
-const Wrapper = styled.div`
-  display: grid;
-  justify-items: center;
-  align-items: center;
-`;
-
-const Heading = styled.h1`
-color: white;
-`;
-
-const FormWrapper = styled.form`
-  display: flex;
-  flex-direction: column;
-  background-color:white;
-  padding:1em 2em 1em 2em;
-  border-radius: 20px;
-
+const Wrapper = styled.div `
+display: flex;
+flex-direction: column;
+justify-items: center;
+align-items: center;
+`
+const FormWrapper = styled.form `
+display: flex;
+flex-direction: column;
+background-color:white;
+padding:1em 2em 1em 2em;
+border-radius: 20px;
+`
+const Input = styled.input`
+  padding: 0.5em;
+  margin: 0.5em;
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+  font-size:12pt;
 `;
 
 const Button = styled.button`
@@ -88,10 +99,3 @@ const Button = styled.button`
   }
 `;
 
-const Input = styled.input`
-  padding: 0.5em;
-  margin: 0.5em;
-  background: papayawhip;
-  border: none;
-  border-radius: 3px;
-`;

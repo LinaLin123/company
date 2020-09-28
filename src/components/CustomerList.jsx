@@ -38,7 +38,7 @@ export default function CustomerList() {
             );
           })}
       </ul>
-
+      
       <div>
         <CreateCustomerForm />
       </div>
