@@ -10,10 +10,15 @@ export default function CustomersPage() {
 
   return (
     <Wrapper>
+      <UserContainer>
       <Heading>Welcome {user.firstName}</Heading>
+     
       <UserWrapper>
         <User />
       </UserWrapper>
+      </UserContainer>
+
+
       <CustomerList />
     </Wrapper>
   );
@@ -22,11 +27,16 @@ export default function CustomersPage() {
 const Wrapper = styled.div `
 display: flex;
 flex-direction: column;
-align-items: flex-end;
 `
 const Heading = styled.h2 `
 margin:0.5em 0 0.5em 0;
 font-size:30px;
+padding-right:1em;
+`
+const UserContainer = styled.div`
+display:flex;
+flex-direction: column;
+align-items: flex-end;
 `
 
 const UserWrapper = styled(Wrapper) `

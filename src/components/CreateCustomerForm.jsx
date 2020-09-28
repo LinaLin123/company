@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import UserKit from "../data/UserKit";
 import { CustomerListContext } from "../contexts/CustomerListContext";
+import styled from "styled-components";
 
 export default function CreateCustomerForm() {
   const userKit = new UserKit();
@@ -10,7 +11,7 @@ export default function CreateCustomerForm() {
   const [organisationNr, setOrganisationNr] = useState("");
   const [vatNr, setVatNr] = useState("");
   const [reference, setReference] = useState("");
-  const [paymentTerm, setPaymentTerm] = useState("2"); // ska vara nr
+  const [paymentTerm, setPaymentTerm] = useState("");
   const [website, setWebsite] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -56,63 +57,97 @@ export default function CreateCustomerForm() {
   }
 
   return (
-    <div>
-      <h2>Register new customer</h2>
-      <form>
+    <Wrapper>
+      <Heading>Register new customer</Heading>
+      <FormWrapper>
         <label>Name</label>
-        <input
+        <Input
           value={name}
           type="text"
           onChange={(e) => setName(e.target.value)}
         />
         <label>Organisation Number</label>
-        <input
+        <Input
           value={organisationNr}
           type="number"
           onChange={(e) => setOrganisationNr(e.target.value)}
         />
         <label>VAT number</label>
-        <input
-          value={vatNr}
-          name="vatNr"
-          type="text"
-          onChange={handleChange}
-        />
+        <Input value={vatNr} name="vatNr" type="text" onChange={handleChange} />
         {error}
 
         <label>Reference</label>
-        <input
+        <Input
           value={reference}
           onChange={(e) => setReference(e.target.value)}
         />
-        <label>Payment Term</label>
-        <input
+        <label>Payment Term(days)</label>
+        <Input
           value={paymentTerm}
           type="number"
           onChange={(e) => setPaymentTerm(e.target.value)}
         />
         <label>Website</label>
-        <input
+        <Input
           value={website}
           type="text"
           onChange={(e) => setWebsite(e.target.value)}
         />
 
         <label>Email</label>
-        <input
+        <Input
           value={email}
           type="email"
           required
           onChange={(e) => setEmail(e.target.value)}
         />
         <label>Phone Number</label>
-        <input
+        <Input
           value={phoneNumber}
           type="number"
           onChange={(e) => setPhoneNumber(e.target.value)}
         />
-        <button onClick={createCustomer}>Register</button>
-      </form>
-    </div>
+        <Button onClick={createCustomer}>Register</Button>
+      </FormWrapper>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+`;
+const Heading = styled.h2`
+  margin: 0.5em 0 0.5em 0;
+  font-size: 20px;
+`;
+
+const FormWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+const Input = styled.input`
+  padding: 0.5em;
+  margin: 0.5em;
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+  font-size: 12pt;
+`;
+
+const Button = styled.button`
+  background-color: orange;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  :hover {
+    background-color: grey;
+    color: white;
+  }
+`;

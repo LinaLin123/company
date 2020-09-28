@@ -9,7 +9,6 @@ import { CustomerListContext } from "./contexts/CustomerListContext"
 import { UserContext } from "./contexts/UserContext"
 import ClientPage from "./Pages/ClientPage"
 import CheckYourEmail from "./Pages/CheckYourEmail"
-
 import './App.css';
 
 
